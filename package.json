@@ -1,0 +1,30 @@
+{
+  "name": "@jimkang/autoc",
+  "version": "1.0.0",
+  "description": "Inspired by [node-autocorrelation](https://github.com/MaximilianBuegler/node-autocorrelation), this is an implementation of autocorrelation as [explained by Thibauld Nion](https://etudes.tibonihoo.net/literate_musing/autocorrelations.html). I'm implementing it in order to understand it.",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jimkang/autoc.git"
+  },
+  "keywords": [
+    "math",
+    "statistics"
+  ],
+  "author": "Jim Kang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimkang/autoc/issues"
+  },
+  "homepage": "https://github.com/jimkang/autoc",
+  "devDependencies": {
+    "tape": "^4.6.0"
+  },
+  "dependencies": {
+    "eslint": "^7.13.0",
+    "fft-js": "0.0.12"
+  }
+}
