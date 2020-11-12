@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "basic-2d-math": "^1.0.1",
+    "d3-array": "^2.8.0",
     "eslint": "^7.13.0",
     "fft-js": "0.0.12"
   }

@@ -38,8 +38,8 @@ var testCases = [
   {
     name: 'Uncentered autoc',
     fn: autoc,
-    params: [[-4, -12, -4, -12, -4, -12, -4, -12]],
-    expected: [1, -1, 1, -1, 1, -1, 1, -1]
+    params: [[-4, -12, -4, -12, -4, -12, -4, -12], false],
+    expected: [1, 0.6, 1, 0.6, 1, 0.6, 1, 0.6]
   }
 ];
 
@@ -55,7 +55,7 @@ function runTest(testCase) {
     } else {
       t.ok(
         Math.abs(result - testCase.expected) <= tolerance,
-        `Result ${result} is within tolerance of ${testCase.expected}.`
+        `Result ${result} is within ${tolerance} of ${testCase.expected}.`
       );
     }
     t.end();
