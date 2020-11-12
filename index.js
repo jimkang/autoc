@@ -1,18 +1,17 @@
 var { fft, ifft } = require('fft-js');
+var { getVectorMagnitude } = require('basic-2d-math');
 
 function autoc(signal) {
   return [];
 }
 
 function autocovariance(signal) {
-  var ifftPSD = ifft(powerSpectralDensity(signal));
-  // TODO: ifft needs complex numbers.
+  var ifftPSD = ifft(powerSpectralDensity(signal).map(formatAsComplex));
   var ifftPSDDivided = ifftPSD.map(divByLength);
-  console.log(ifftPSD, ifftPSDDivided);
   return ifftPSDDivided.map(getReal);
 
   function divByLength(n) {
-    return n / signal.length;
+    return [n[0] / signal.length, n[1] / signal.length];
   }
 }
 
@@ -23,7 +22,7 @@ function powerSpectralDensity(signal) {
   // numbers.
   var ftSignal = fft(centered);
 
-  var absFtSignal = ftSignal.map(abs);
+  var absFtSignal = ftSignal.map(getVectorMagnitude);
   return absFtSignal.map(sq);
 }
 
@@ -44,16 +43,16 @@ function add(a, b) {
   return a + b;
 }
 
-function abs(X) {
-  return Math.sqrt(X[0] * X[0] + X[1] + X[1]);
-}
-
 function getReal(X) {
   return X[0];
 }
 
 function sq(n) {
   return n * n;
+}
+
+function formatAsComplex(n) {
+  return [n, 0];
 }
 
 module.exports = {
