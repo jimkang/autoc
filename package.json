@@ -1,6 +1,6 @@
 {
   "name": "@jimkang/autoc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Inspired by [node-autocorrelation](https://github.com/MaximilianBuegler/node-autocorrelation), this is an implementation of autocorrelation as [explained by Thibauld Nion](https://etudes.tibonihoo.net/literate_musing/autocorrelations.html). I'm implementing it in order to understand it.",
   "main": "index.js",
   "scripts": {
