@@ -7,3 +7,5 @@ pushall:
 prettier:
 	prettier --single-quote --write "**/*.js"
 
+start-notebooks:
+	cd meta && jupyter-lab
